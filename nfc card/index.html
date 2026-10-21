@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sa'ad Bin Ain M. Jandul | Digital Profile & Contact Card</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom smooth glassmorphism and animations */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 25px rgba(34, 197, 94, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 45px rgba(34, 197, 94, 0.6);
+            }
+        }
+
+        .avatar-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-br from-slate-100 via-slate-200 to-zinc-300 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 sm:p-6 transition-colors duration-300">
+
+    <!-- Theme Toggle Floating Button -->
+    <button onclick="toggleTheme()" aria-label="Toggle Theme"
+        class="absolute top-6 right-6 p-3 rounded-full bg-white/80 dark:bg-slate-800/80 shadow-lg backdrop-blur-md text-slate-700 dark:text-slate-200 hover:scale-105 transition-all focus:outline-none">
+        <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+    </button>
+
+    <!-- Main Container Card -->
+    <main class="w-full max-w-md mx-auto">
+        <div class="glass-card rounded-3xl shadow-2xl p-6 sm:p-8 relative overflow-hidden transition-all duration-300">
+
+            <!-- Decorative Background Accent -->
+            <div
+                class="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full blur-3xl opacity-20 pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-full blur-3xl opacity-20 pointer-events-none">
+            </div>
+
+            <!-- Header / Profile Section -->
+            <div class="flex flex-col items-center text-center relative z-10">
+                <!-- Profile Picture -->
+                <div class="relative mb-4">
+                    <div
+                        class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-green-400 via-emerald-500 to-teal-500 avatar-glow">
+                        <img src="profile.jpg" alt="Sa'ad Bin Ain M. Jandul Profile Picture"
+                            class="w-full h-full object-cover rounded-full bg-slate-200 dark:bg-slate-800"
+                            onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=SJ'">
+                    </div>
+                    <span
+                        class="absolute bottom-1 right-1 bg-green-500 w-5 h-5 rounded-full border-4 border-white dark:border-gray-900"
+                        title="Online / Available"></span>
+                </div>
+
+                <!-- Name & Title -->
+                <h1
+                    class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center justify-center gap-2">
+                    Sa'ad Bin Ain M. Jandul
+                    <i class="fa-solid fa-circle-check text-blue-500 text-sm" title="Verified Creator"></i>
+                </h1>
+                <p class="text-green-600 dark:text-green-400 font-medium text-sm sm:text-base mt-1">Student</p>
+
+                <!-- Address -->
+                <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-2 flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-rose-500"></i>
+                    Cabatangan Zamboanga City
+                </p>
+
+                <!-- Bio -->
+                <p class="text-slate-600 dark:text-slate-300 text-sm mt-4 leading-relaxed px-2">
+                    Building delightful digital experiences, exploring cloud architectures, and open-source enthusiast.
+                    Always down to talk tech or design!
+                </p>
+            </div>
+
+            <!-- Quick Action Button: Mobile Modal Trigger -->
+            <div class="mt-6 relative z-10">
+                <button onclick="openContactModal()"
+                    class="w-full py-3.5 px-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold rounded-2xl shadow-lg shadow-green-600/25 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none">
+                    <i class="fa-solid fa-phone-volume text-lg"></i>
+                    <span>Get in Touch / Save Contact</span>
+                </button>
+            </div>
+
+            <!-- Divider -->
+            <div class="my-6 border-t border-slate-200 dark:border-slate-800 relative z-10"></div>
+
+            <!-- Social Media Links Grid -->
+            <div class="relative z-10">
+                <h2
+                    class="text-xs font-semibold tracking-wider text-slate-400 dark:text-slate-500 uppercase mb-3 text-center">
+                    Connect Online</h2>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        class="flex flex-col items-center justify-center p-3 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-blue-600 hover:text-white text-slate-700 dark:text-slate-200 transition-all group shadow-sm">
+                        <i
+                            class="fa-brands fa-facebook text-xl mb-1 group-hover:scale-110 transition-transform text-blue-600 group-hover:text-white"></i>
+                        <span class="text-xs font-medium">Facebook</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/dumtonigar" target="_blank" rel="noopener noreferrer"
+                        class="flex flex-col items-center justify-center p-3 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white text-slate-700 dark:text-slate-200 transition-all group shadow-sm">
+                        <i
+                            class="fa-brands fa-instagram text-xl mb-1 group-hover:scale-110 transition-transform text-pink-500 group-hover:text-white"></i>
+                        <span class="text-xs font-medium">Instagram</span>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/saadbinain" target="_blank" rel="noopener noreferrer"
+                        class="flex flex-col items-center justify-center p-3 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 hover:bg-slate-900 hover:text-white text-slate-700 dark:text-slate-200 transition-all group shadow-sm">
+                        <i
+                            class="fa-brands fa-github text-xl mb-1 group-hover:scale-110 transition-transform text-slate-900 dark:text-slate-100 group-hover:text-white"></i>
+                        <span class="text-xs font-medium">GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Badge -->
+            <div class="mt-8 text-center text-xs text-slate-400 dark:text-slate-500 relative z-10">
+                <p>&copy; 2026 Sa'ad Bin Ain M. Jandul. Powered by Static HTML & Tailwind.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Interactive Mobile Number Modal -->
+    <div id="contact-modal"
+        class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="modal-content"
+            class="bg-white dark:bg-slate-900 w-full max-w-sm rounded-3xl p-6 shadow-2xl transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-slate-800">
+
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Contact Options</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">09472047213</p>
+                    </div>
+                </div>
+                <button onclick="closeContactModal()"
+                    class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Actions -->
+            <div class="py-6 space-y-3">
+                <!-- Call Action Button -->
+                <a href="tel:09472047213" onclick="closeContactModal()"
+                    class="w-full flex items-center justify-center gap-3 py-3.5 px-4 bg-green-600 hover:bg-green-500 text-white font-semibold rounded-2xl shadow-lg shadow-green-600/20 transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Number Directly</span>
+                </a>
+
+                <!-- Save vCard Action Button -->
+                <button onclick="downloadVCard()"
+                    class="w-full flex items-center justify-center gap-3 py-3.5 px-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-semibold rounded-2xl transition-all">
+                    <i class="fa-solid fa-address-card text-blue-500"></i>
+                    <span>Save Contact (.vcf)</span>
+                </button>
+            </div>
+
+            <!-- Modal Footer Note -->
+            <p class="text-center text-xs text-slate-400 dark:text-slate-500">
+                Clicking save will download a vCard file compatible with iOS, Android, and Outlook.
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Modal Control Functions
+        const modal = document.getElementById('contact-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openContactModal() {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeContactModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        // Close modal when clicking outside of content box
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeContactModal();
+            }
+        });
+
+        // Dynamic vCard (.vcf) Generator & Downloader
+        function downloadVCard() {
+            const vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:Sa\'ad Bin Ain M. Jandul',
+                'N:Jandul;Sa\'ad Bin Ain;M.;;',
+                'TITLE:Student',
+                'TEL;TYPE=CELL:09472047213',
+                'ADR;TYPE=WORK:;;Cabatangan;Zamboanga City;;;Philippines',
+                'NOTE:Connected via Digital Profile Card',
+                'END:VCARD'
+            ].join('\n');
+
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Saad_Jandul_Contact.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            closeContactModal();
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.className = 'fa-solid fa-sun text-lg';
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+            }
+        }
+
+        // Initialize saved theme on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-sun text-lg';
+            } else {
+                document.documentElement.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+            }
+        });
+    </script>
+</body>
+
+</html>
